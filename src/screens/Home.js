@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, StyleSheet, ImageBackground, FlatList } from 'react-native';
+import { View, StyleSheet, ImageBackground, FlatList, ScrollView } from 'react-native';
 import HeaderContent from '../components/HomeHeaderContent';
 import Section from '../components/Sections';
 import categories from '../externalData/externalData';
@@ -7,48 +7,65 @@ import FoodItem from '../components/FoodItem';
 
 const Home = () => {
     return (
+        <ScrollView>
+            <View style={styles.container}>
+                <ImageBackground source={require('../assets/Images/imgBG.jpg')} style={styles.backgroundImage}>
 
-        <View style={styles.container}>
-            <ImageBackground source={require('../assets/Images/imgBG.jpg')} style={styles.backgroundImage}>
+                    {/* Header Content */}
+                    <HeaderContent />
 
-                {/* Header Content */}
-                <HeaderContent />
+                    {/*Second/White Part of Home Page*/}
+                    <View style={styles.sampleFoodItemsArea}>
 
-                {/*Second/White Part of Home Page*/}
-                <View style={styles.sampleFoodItemsArea}>
-                    <View>
-                        {/* Recommended*/}
-                        <Section title="Recommeded" />
+                        <View >
+                            {/* Recommended*/}
+                            <Section title="Recommeded" />
 
-                        {/*Sample Food Items List */}
-                        <FlatList
-                            data={categories}
-                            horizontal
-                            keyExtractor={(item) => item.id}
-                            renderItem={({ item }) => {
-                                return (
-                                    <FoodItem
-                                        FoodItem={item}
-                                    />
-                                );
-                            }}
-                        />
+                            {/*Sample Food Items List */}
+                            <FlatList
+                                data={categories}
+                                horizontal
+                                keyExtractor={(item) => item.id}
+                                renderItem={({ item }) => {
+                                    return (
+                                        <FoodItem
+                                            FoodItem={item}
+                                        />
+                                    );
+                                }}
+                            />
+                        </View>
+
+                        <View>
+                            {/* Near You*/}
+                            <Section title="Near You" />
+
+                            {/*Sample Food Items List */}
+                            <FlatList
+                                data={categories}
+                                keyExtractor={(item) => item.id}
+                                renderItem={({ item }) => {
+                                    return (
+                                        <FoodItem
+                                            FoodItem={item}
+                                        />
+                                    );
+                                }}
+                            />
+
+                        </View>
+
+
                     </View>
 
 
-                    <Section title="Near You" />
 
 
-                </View>
+                </ImageBackground >
 
+            </View >
 
-
-
-            </ImageBackground >
-
-        </View >
-
-
+        </ScrollView>
     );
 }
 

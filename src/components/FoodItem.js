@@ -42,6 +42,7 @@ const FoodItem = ({ FoodItem }) => {
 
 const foodItemStyles = StyleSheet.create({
     container: {
+        backgroundColor: '#f9f6f2',
         marginTop: 20,
         marginLeft: 10,
         padding: 8,
