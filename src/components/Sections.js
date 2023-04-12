@@ -1,8 +1,7 @@
 import React from "react";
-import { StyleSheet, View, Text, TouchableOpacity, SectionList } from "react-native";
-import { sections } from "../externalData/externalData";
+import { StyleSheet, View, Text, TouchableOpacity} from "react-native";
 
-const Section = ({ onPress, title }) => {
+const SectionRecommended = ({ onPress, title }) => {
     return (
         <View style={homeLowerSection.container}>
             <View style={{ flex: 1, justifyContent: "center" }}>
@@ -17,6 +16,24 @@ const Section = ({ onPress, title }) => {
 
     )
 }
+
+const SectionNearYou = ({ onPress, title }) => {
+    return (
+        <View style={homeLowerSection.container}>
+            <View style={{ flex: 1, justifyContent: "center" }}>
+                <Text style={{ fontSize: 18, fontWeight: "500", color: "black" }}>
+                    {title}
+                </Text>
+            </View>
+            <TouchableOpacity style={{ justifyContent: "center" }} onPress={onPress}>
+                <Text style={{ fontSize: 15, color: "green" }}>See All</Text>
+            </TouchableOpacity>
+        </View>
+
+    )
+}
+
+
 
 const homeLowerSection = StyleSheet.create({
     container: {
@@ -34,4 +51,4 @@ const homeLowerSection = StyleSheet.create({
 });
 
 
-export default Section
+export  {SectionRecommended, SectionNearYou};

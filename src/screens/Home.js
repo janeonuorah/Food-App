@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { View, StyleSheet, ImageBackground, FlatList, ScrollView } from 'react-native';
 import HeaderContent from '../components/HomeHeaderContent';
-import Section from '../components/Sections';
-import categories from '../externalData/externalData';
-import FoodItem from '../components/FoodItem';
+import {SectionRecommended, SectionNearYou } from '../components/Sections';
+import { categories, nearFoods } from '../externalData/externalData';
+import { NearFoodItems, RecommendedFoodItems } from '../components/FoodItem';
 
 const Home = () => {
     return (
@@ -19,7 +19,7 @@ const Home = () => {
 
                         <View >
                             {/* Recommended*/}
-                            <Section title="Recommeded" />
+                            <SectionRecommended title="Recommeded" />
 
                             {/*Sample Food Items List */}
                             <FlatList
@@ -28,7 +28,7 @@ const Home = () => {
                                 keyExtractor={(item) => item.id}
                                 renderItem={({ item }) => {
                                     return (
-                                        <FoodItem
+                                        <RecommendedFoodItems
                                             FoodItem={item}
                                         />
                                     );
@@ -38,15 +38,15 @@ const Home = () => {
 
                         <View>
                             {/* Near You*/}
-                            <Section title="Near You" />
+                            <SectionNearYou title="Near You" />
 
                             {/*Sample Food Items List */}
                             <FlatList
-                                data={categories}
+                                data={nearFoods}
                                 keyExtractor={(item) => item.id}
                                 renderItem={({ item }) => {
                                     return (
-                                        <FoodItem
+                                        <NearFoodItems
                                             FoodItem={item}
                                         />
                                     );
@@ -88,8 +88,9 @@ const styles = StyleSheet.create({
         backgroundColor: "white",
         flex: 1,
         borderTopLeftRadius: 25,
-        borderTopRightRadius: 25
-    }
+        borderTopRightRadius: 25,
+        top: 20,
+    },
 
 })
 
