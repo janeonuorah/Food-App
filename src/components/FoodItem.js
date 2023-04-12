@@ -44,34 +44,44 @@ const NearFoodItems = ({ FoodItem }) => {
     return (
         <View style={NearFoodItemStyles.container}>
 
+            <View style={{ flexDirection: 'row' }}>
+                {/*Food Item Image */}
+                <Image source={FoodItem.image}
+                    resizeMode="cover"
+                    style={{ width: 110, height: 100, borderRadius: 12 }}>
+                </Image>
 
-            {/*Food Item Image */}
-            <Image source={FoodItem.image}
-                resizeMode="cover"
-                style={{ width: 110, height: 100, borderRadius: 12 }}>
-            </Image>
+                <View style={{ marginTop: 20, marginLeft: 10 }}>
+                    {/* Name of food, Location and distance, Rating */}
 
-            {/* Rating */}
-            <View style={NearFoodItemStyles.ratingContainer}>
-                <View style={{ justifyContent: "center", paddingRight: 6 }}>
-                    <Image
-                        source={require("../assets/Icon/star.png")}
-                        style={{ width: 14, height: 14 }}
-                    />
-                </View>
-                <View style={{ justifyContent: "center" }}>
-                    <Text style={{ fontWeight: 'bold' }}>{FoodItem.rating}</Text>
+                    {/* Name of food */}
+                    <Text numberOfLines={1} style={NearFoodItemStyles.foodName}>
+                        {FoodItem.title}
+                    </Text>
+
+                    {/*Location and distance*/}
+                    <Text numberOfLines={1} style={NearFoodItemStyles.location}>
+                        {FoodItem.location}
+                    </Text>
+
+                    {/* Rating */}
+                    <View style={NearFoodItemStyles.ratingContainer}>
+                        <View style={{ justifyContent: "center", paddingRight: 6 }}>
+                            <Image
+                                source={require("../assets/Icon/star.png")}
+                                style={{ width: 14, height: 14 }}
+                            />
+                        </View>
+                        <View style={{ justifyContent: "center" }}>
+                            <Text style={{ fontWeight: 'bold' }}>{FoodItem.rating}</Text>
+                        </View>
+                    </View>
                 </View>
             </View>
 
-
-
-            {/*Food Details(Name and Price) */}
+            {/*Price) */}
             <View style={NearFoodItemStyles.detailsContainer}>
-                <Text numberOfLines={1} style={foodItemStyles.foodName}>
-                    {FoodItem.title}
-                </Text>
-                <Text style={foodItemStyles.foodPrice}>
+                <Text style={NearFoodItemStyles.foodPrice}>
                     ${FoodItem.price.toFixed(2)}
                 </Text>
             </View>
@@ -127,16 +137,28 @@ const NearFoodItemStyles = StyleSheet.create({
         marginLeft: 10,
         padding: 8,
         borderRadius: 12,
-       flexDirection: 'row',
-      justifyContent: 'space-between'
+        flexDirection: 'row',
+        justifyContent: 'space-between'
     },
 
     ratingContainer: {
-
+        flexDirection: 'row'
     },
 
-    detailsContainer: {
+    foodName: {
+        fontSize: 18,
+        fontWeight: 'bold',
+    },
 
+    location: {
+        marginTop: 5,
+        marginBottom: 5,
+        color: 'grey'
+    },
+
+    foodPrice: {
+        marginTop: 20,
+        color: 'green'
     }
 })
 

@@ -36,21 +36,24 @@ const categories = [
       title: "Jollof Rice",
       image: require("../assets/Images/jollof-rice.jpeg"),
       price: 10.50,
-      rating: 4.7
+      rating: 4.7,
+      location: 'Dutse • 1km',
     },
     {
       id: 1,
       title: "Fufu and Afang Soup",
       image: require("../assets/Images/afang-soup.jpeg"),
       price: 20,
-      rating: 5.0
+      rating: 5.0,
+      location: 'Kubwa • 2km',
     },
     {
       id: 2,
       title: "Yam and Egg Sauce",
       image: require("../assets/Images/yam.jpeg"),
       price: 10.00,
-      rating: 4
+      rating: 4,
+      location: 'Wuse • 0.5km',
     },
   ];
 
