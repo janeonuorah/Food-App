@@ -17,6 +17,7 @@ const BottomTabs = () => {
                 initialRouteName="Home"
                 screenOptions={{ headerShown: true, tabBarShowLabel: false }}
             >
+                
                 <Tab.Screen name="Home"
                     component={Home}
                     options={{
@@ -72,6 +73,7 @@ const BottomTabs = () => {
                     }
                     }
                 />
+
                 <Tab.Screen name="Search"
                     component={searchScreen}
                     options={{
@@ -99,6 +101,7 @@ const BottomTabs = () => {
                     }
                     }
                 />
+
                 <Tab.Screen name="Profile"
                     component={Profile}
                     options={{
@@ -126,6 +129,7 @@ const BottomTabs = () => {
                     }
                     }
                 />
+
             </Tab.Navigator>
     )
 

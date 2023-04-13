@@ -55,6 +55,14 @@ const categories = [
       rating: 4,
       location: 'Wuse • 0.5km',
     },
+    {
+      id: 3,
+      title: "Small Chops Platter ",
+      image: require("../assets/Images/small-chops.jpeg"),
+      price: 17.00,
+      rating: 4,
+      location: 'Gwarimpa • 1.5km',
+    },
   ];
 
   

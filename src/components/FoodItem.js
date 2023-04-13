@@ -135,7 +135,8 @@ const NearFoodItemStyles = StyleSheet.create({
         backgroundColor: '#f9f6f2',
         marginTop: 20,
         marginLeft: 10,
-        padding: 8,
+        marginRight: 10,
+        padding: 10,
         borderRadius: 12,
         flexDirection: 'row',
         justifyContent: 'space-between'
