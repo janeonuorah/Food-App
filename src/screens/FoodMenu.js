@@ -4,7 +4,7 @@ import React from 'react'
 const FoodMenu = () => {
   return (
     <View style={styles.container}>
-      <Text>Food Menu</Text>
+      <Text>Food Menu Coming Soon</Text>
     </View>
   )
 }

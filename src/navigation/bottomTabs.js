@@ -13,124 +13,124 @@ const Tab = createBottomTabNavigator();
 
 const BottomTabs = () => {
     return (
-            <Tab.Navigator
-                initialRouteName="Home"
-                screenOptions={{ headerShown: true, tabBarShowLabel: false }}
-            >
-                
-                <Tab.Screen name="Home"
-                    component={Home}
-                    options={{
-                        headerShown: false,
-                        tabBarIcon: () => {
-                            return (
-                                <View
-                                    style={{
-                                        paddingTop: 12,
-                                        alignItems: "center",
-                                        justifyContent: "center",
-                                    }}
-                                >
-                                    <Image
-                                        source={require("../assets/Icon/home.png")}
-                                        style={{
-                                            width: 20,
-                                            height: 20,
-                                            tintColor: "grey",
-                                        }}
-                                    />
-                                </View>
-                            );
-                        }
-                    }
-                    }
-                />
-               
-               <Tab.Screen name="Menu"
-                    component={foodMenu}
-                    options={{
-                        headerShown: false,
-                        tabBarIcon: () => {
-                            return (
-                                <View
-                                    style={{
-                                        paddingTop: 12,
-                                        alignItems: "center",
-                                        justifyContent: "center",
-                                    }}
-                                >
-                                    <Image
-                                        source={require("../assets/Icon/menu.png")}
-                                        style={{
-                                            width: 20,
-                                            height: 20,
-                                            tintColor: "grey",
-                                        }}
-                                    />
-                                </View>
-                            );
-                        }
-                    }
-                    }
-                />
+        <Tab.Navigator
+            initialRouteName="Home"
+            screenOptions={{ headerShown: true }}
+        >
 
-                <Tab.Screen name="Search"
-                    component={searchScreen}
-                    options={{
-                        headerShown: false,
-                        tabBarIcon: () => {
-                            return (
-                                <View
+            <Tab.Screen name="Home"
+                component={Home}
+                options={{
+                    headerShown: false,
+                    tabBarIcon: () => {
+                        return (
+                            <View
+                                style={{
+                                    paddingTop: 12,
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                }}
+                            >
+                                <Image
+                                    source={require("../assets/Icon/home.png")}
                                     style={{
-                                        paddingTop: 12,
-                                        alignItems: "center",
-                                        justifyContent: "center",
+                                        width: 20,
+                                        height: 20,
+                                        tintColor: "grey",
                                     }}
-                                >
-                                    <Image
-                                        source={require("../assets/Icon/search-interface-symbol.png")}
-                                        style={{
-                                            width: 20,
-                                            height: 20,
-                                            tintColor: "grey",
-                                        }}
-                                    />
-                                </View>
-                            );
-                        }
+                                />
+                            </View>
+                        );
                     }
-                    }
-                />
+                }
+                }
+            />
 
-                <Tab.Screen name="Profile"
-                    component={Profile}
-                    options={{
-                        headerShown: false,
-                        tabBarIcon: () => {
-                            return (
-                                <View
+            <Tab.Screen name="Menu"
+                component={foodMenu}
+                options={{
+                    headerShown: false,
+                    tabBarIcon: () => {
+                        return (
+                            <View
+                                style={{
+                                    paddingTop: 12,
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                }}
+                            >
+                                <Image
+                                    source={require("../assets/Icon/menu.png")}
                                     style={{
-                                        paddingTop: 12,
-                                        alignItems: "center",
-                                        justifyContent: "center",
+                                        width: 20,
+                                        height: 20,
+                                        tintColor: "grey",
                                     }}
-                                >
-                                    <Image
-                                        source={require("../assets/Icon/user.png")}
-                                        style={{
-                                            width: 20,
-                                            height: 20,
-                                            tintColor: "grey",
-                                        }}
-                                    />
-                                </View>
-                            );
-                        }
+                                />
+                            </View>
+                        );
                     }
-                    }
-                />
+                }
+                }
+            />
 
-            </Tab.Navigator>
+            <Tab.Screen name="Search"
+                component={searchScreen}
+                options={{
+                    headerShown: false,
+                    tabBarIcon: () => {
+                        return (
+                            <View
+                                style={{
+                                    paddingTop: 12,
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                }}
+                            >
+                                <Image
+                                    source={require("../assets/Icon/search-interface-symbol.png")}
+                                    style={{
+                                        width: 20,
+                                        height: 20,
+                                        tintColor: "grey",
+                                    }}
+                                />
+                            </View>
+                        );
+                    }
+                }
+                }
+            />
+
+            <Tab.Screen name="Profile"
+                component={Profile}
+                options={{
+                    headerShown: false,
+                    tabBarIcon: () => {
+                        return (
+                            <View
+                                style={{
+                                    paddingTop: 12,
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                }}
+                            >
+                                <Image
+                                    source={require("../assets/Icon/user.png")}
+                                    style={{
+                                        width: 20,
+                                        height: 20,
+                                        tintColor: "grey",
+                                    }}
+                                />
+                            </View>
+                        );
+                    }
+                }
+                }
+            />
+
+        </Tab.Navigator>
     )
 
 }

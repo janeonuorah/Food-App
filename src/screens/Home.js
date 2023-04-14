@@ -1,11 +1,27 @@
 import * as React from 'react';
-import { View, StyleSheet, ImageBackground, FlatList, ScrollView } from 'react-native';
+import {
+    View,
+    StyleSheet,
+    ImageBackground,
+    FlatList,
+    ScrollView,
+} from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+
 import HeaderContent from '../components/HomeHeaderContent';
-import {SectionRecommended, SectionNearYou } from '../components/Sections';
+import { SectionRecommended, SectionNearYou } from '../components/Sections';
 import { categories, nearFoods } from '../externalData/externalData';
 import { NearFoodItems, RecommendedFoodItems } from '../components/FoodItem';
 
 const Home = () => {
+    const toNavigate = useNavigation();
+
+    const onNavigation = (item) => {
+      toNavigate.navigate("Food Details", {
+        foodItemDetails: item,
+      });
+    };
+
     return (
         <ScrollView>
             <View style={styles.container}>
@@ -30,6 +46,7 @@ const Home = () => {
                                     return (
                                         <RecommendedFoodItems
                                             FoodItem={item}
+                                            onPressItem={() => onNavigation(item)}
                                         />
                                     );
                                 }}
@@ -48,6 +65,7 @@ const Home = () => {
                                     return (
                                         <NearFoodItems
                                             FoodItem={item}
+                                            onPressItem={() => onNavigation(item)}
                                         />
                                     );
                                 }}
@@ -57,9 +75,6 @@ const Home = () => {
 
 
                     </View>
-
-
-
 
                 </ImageBackground >
 

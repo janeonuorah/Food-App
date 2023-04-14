@@ -1,10 +1,10 @@
 import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
 
-const Profile = () => {
+const FoodDetails = () => {
   return (
     <View style={styles.container}>
-      <Text>Profile Coming Soon</Text>
+      <Text>Details Coming Soon</Text>
     </View>
   )
 }
@@ -19,4 +19,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default Profile
+export default FoodDetails

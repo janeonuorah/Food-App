@@ -1,9 +1,11 @@
 import React from "react";
-import { View, StyleSheet, Image, Text } from "react-native";
+import { View, StyleSheet, Image, Text, TouchableOpacity } from "react-native";
 
-const RecommendedFoodItems = ({ FoodItem }) => {
+
+const RecommendedFoodItems = ({ FoodItem, onPressItem}) => {
     return (
-        <View style={foodItemStyles.container}>
+        <TouchableOpacity style={foodItemStyles.container} onPress={onPressItem}>
+
             <View>
 
                 {/*Food Item Image */}
@@ -36,7 +38,9 @@ const RecommendedFoodItems = ({ FoodItem }) => {
                     ${FoodItem.price.toFixed(2)}
                 </Text>
             </View>
-        </View>
+
+        </TouchableOpacity>
+
     )
 }
 
