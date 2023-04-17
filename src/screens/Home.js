@@ -35,7 +35,7 @@ const Home = () => {
 
                         <View >
                             {/* Recommended*/}
-                            <SectionRecommended title="Recommeded" />
+                            <SectionRecommended title="Recommended" />
 
                             {/*Sample Food Items List */}
                             <FlatList
